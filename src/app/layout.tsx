@@ -1,16 +1,12 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "AI Lead Gen Playbook | Build & Sell AI Lead Generation",
-  description: "The complete playbook for building and selling AI lead generation services to local businesses using Claude AI. Learn tools, workflows, pricing, and sales scripts.",
+  title: "AI Lead Gen Playbook",
+  description: "Interactive guide to building an AI lead generation business",
 };
 
 export default function RootLayout({
@@ -20,9 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} font-sans antialiased`}>
-        {children}
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
